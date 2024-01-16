@@ -16,7 +16,7 @@ public class SumOfThreeNumbers {
 
         // These two next lines get the product and average and store them in variables.
         int product = first * second * third;
-        int average = (first + second + third) / 3;
+        float average = (float)(first + second + third) / 3;
 
         System.out.println("The sum of the numbers is " + (first + second + third));
         // Print the new variables:
