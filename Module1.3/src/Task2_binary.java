@@ -11,19 +11,28 @@ public class Task2_binary {
         // Ask binary
         System.out.print("Give binary: ");
         String input = scanner.nextLine();
-        // Check if binary
         // Can be checked and converted in same loop.
         // Convert to decimal
         int sum = 0;
         for(int i = 0; i < input.length(); i++){
-            // convert index to int
-            int num = Integer.parseInt(String.valueOf(input.charAt(i)));
-            num = (int) Math.pow(num, i);
-            sum += num;
+                // convert index to int
+                // start from end and go back
+                int n = input.length() - 1 - i;
+                int num = Integer.parseInt(String.valueOf(input.charAt(n)));
+            if (num == 1 || num == 0){
+                // get value and add to sum
+                num = (int) (num * Math.pow(2, i));
+                sum += num;
+            }else{  // value is not binary, break out of program
+                    sum = -1;
+                    break;
+                }
         }
-        System.out.println(sum);
-        // Print decimal
-        //System.out.println(decimal);
+        if (sum != -1) {
+            System.out.println("SUM IN DECIMAL = " + sum);
+        } else {
+            System.out.println("INPUT IS NOT A BINARY VALUE!");
+        }
         scanner.close();
     }
 }
