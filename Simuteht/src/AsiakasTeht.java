@@ -1,4 +1,4 @@
-public class AsiakasLuokka {
+public class AsiakasTeht {
     public static void main(String[] args) {
         Asiakas asse = new Asiakas();
         Asiakas pesse = new Asiakas();
