@@ -11,15 +11,22 @@ public class Task3_primenumgen {
         // ask for two nums
         int num1 = 1;
         int num2 = 100;
+
         for (int i = num1; i <= num2; i++){
+            //  start by assuming prime
             boolean isprime = true;
-            for (int j = 0; j < i; j++) {
-                if (j>1 && i%j != 0){
-                    isprime = false;
+
+            //  find out if not prime
+            if (i>1) {
+                for (int j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        isprime = false;
+                        break;
+                    }
                 }
-            }
-            if (isprime){
-                System.out.println(i);
+                if (isprime) {   // print if still prime
+                    System.out.println(i + " is prime!");
+                }
             }
         }
     }
