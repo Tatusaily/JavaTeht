@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*
 Write a program that prompts the user to enter two positive integers, start and end (where start < end).
 The program should generate and display all the prime numbers between start and end, inclusive.
@@ -7,8 +9,12 @@ A prime number is a positive integer greater than 1 that has no positive divisor
 Your program should use control structures (such as loops and conditional statements) to implement the logic for generating and checking prime numbers.
  */
 public class Task3_primenumgen {
+    Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         // ask for two nums
+        System.out.print("Give first number: ");
+        int num1 = scanner.nextLine();
+
         int num1 = 1;
         int num2 = 100;
         for (int i = num1; i <= num2; i++){
