@@ -1,4 +1,4 @@
-public class Teht1_1 {
+public class Teht1_3 {
     // pieni funktio odottelua varten
     public static void wait(int ms)
     {
