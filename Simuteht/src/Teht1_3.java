@@ -42,11 +42,11 @@ class Asiakas {
     public int getId() {
         return this.ID;
     }
-
     public void stop(){ //timestop
         this.lopetusaika = System.currentTimeMillis();
     }
     public long time(){ // return total time
+        this.stop();
         return (this.lopetusaika - this.aloitusaika);
     }
 
@@ -54,7 +54,7 @@ class Asiakas {
         System.out.printf("""
                 Name: %s
                 ID: %d
-                Total time: %d
+                Total time: %d ms
 
                 """, this.name, this.getId(), this.time());
     }
