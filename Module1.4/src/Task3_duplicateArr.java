@@ -23,13 +23,13 @@ public class Task3_duplicateArr {
 
         // make numarray
         for (int i = 0; i < size; i++) {
-            String suffix = switch (i) {    // this isn't quite right but good enough.
+            String suffix = switch (i+1) {    // this isn't quite right but good enough.
                 case 1 -> "st";             // is not grammatically correct after 20.
                 case 2 -> "nd";
                 case 3 -> "rd";
                 default -> "th";
             };
-            System.out.printf("Please enter the %1d%2s integer: ", i + 1, suffix);
+            System.out.printf("Please enter the %1d%2s integer: ", i+1, suffix);
             int num = scanner.nextInt();
             numarray[i] = num;
         }
