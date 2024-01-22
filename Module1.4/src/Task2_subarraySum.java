@@ -2,7 +2,6 @@
 Write a program that takes an array of integers as input from the user and finds the subarray with the maximum sum.
 A subarray is a portion of an array, which consists of contiguous elements from the original array in the same order.
  */
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task2_subarraySum {
