@@ -29,9 +29,9 @@ public class Teht1_3 {
 class Asiakas {
     private static int idcount = 0;
     private final int ID;
-    private final String name;
-    private final long aloitusaika;
-    private long lopetusaika;
+    final String name;
+    final long aloitusaika;
+    long lopetusaika;
 
     public Asiakas(String name){   //constructor
         this.ID = ++idcount;
@@ -46,7 +46,6 @@ class Asiakas {
         this.lopetusaika = System.currentTimeMillis();
     }
     public long time(){ // return total time
-        this.stop();
         return (this.lopetusaika - this.aloitusaika);
     }
 
