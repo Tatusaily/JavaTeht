@@ -13,6 +13,8 @@ System.nanotime()-metodia.
 public class Teht1_4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        // Asiakasluokka lainataan edellisestä tehtävästä (1_3)
         LinkedList<Asiakas> asiakaslist = new LinkedList<>();
         String state = "";
         System.out.println("Tervetuloa!");

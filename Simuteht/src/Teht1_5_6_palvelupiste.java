@@ -3,6 +3,7 @@ import java.util.LinkedList;
 public class Teht1_5_6_palvelupiste {
     public static void main(String[] args) throws InterruptedException {
         // luodaan palvelupiste ja sinne 20 asiakasta
+        // Asiakasluokka lainataan edellisestä tehtävästä (1_3)
         Palvelupiste palvelupiste = new Palvelupiste();
         for (int i = 0; i < 20; i++) {
             String name = "Asiakas "+(i+1);
@@ -17,7 +18,7 @@ public class Teht1_5_6_palvelupiste {
     }
 }
 
-class Palvelupiste{
+class Palvelupiste{ // Asiakasluokka lainataan edellisestä tehtävästä (1_3)
     LinkedList<Asiakas> queue = new LinkedList<>();
     public long keskiarvo = 0;
     public int lukum = 0;
