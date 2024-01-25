@@ -1,4 +1,4 @@
-public class Main {
+public class Task1_Television {
     public static class Television{
         private int channel;
         public Television() {
