@@ -48,7 +48,6 @@ public class Task1_Television {
         Television telly = new Television();
         TelevisionViewer watcher = new TelevisionViewer();
         int day = 0;
-        int
         while (day < 10){
             watcher.watchTV(telly);
             day++;
