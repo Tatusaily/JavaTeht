@@ -1,5 +1,4 @@
-public class Task3 {
-    public class Kello{
+public class Kello{ // Task3
         private static Kello instance = null;
         private int time;
         private Kello(){    // private constructor
@@ -17,4 +16,3 @@ public class Task3 {
             time = num;
         }
     }
-}
