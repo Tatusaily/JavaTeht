@@ -12,45 +12,56 @@ public class Task1_Television {
         }
     }
     public static class TelevisionViewer{
-        private boolean sleeping;
         private int stamina;
+        private int day;
+        private int maxStamina;
         public TelevisionViewer(){
-            this.sleeping = true;
-            this.stamina = 3;
+            this.stamina = 3; // 3, 4, 6, 4, 6...
+            this.maxStamina = 3;
+            this.day = 1;
         }
-        public void bedTime(int day){
-            if (this.sleeping){
-                this.sleeping = false;
-                System.out.printf("Woke up, day %d\n", day);
-            } else{
-                this.sleeping = true;
-                System.out.println("Falling asleep");
+        public void bedTime(){
+            switch(this.maxStamina){
+                case(3), (6):
+                    maxStamina = 4;
+                    break;
+                case(4):
+                    maxStamina = 6;
+                    break;
             }
-        }
+            System.out.println("Falling asleep");
+            this.stamina = this.maxStamina;
+            this.day++;
+            if (this.day <= 10) {
+                System.out.printf("Woke up, day %d\n", this.day);
+            }
+            }
         public void switchChannel(Television tv){
             int channel = tv.getChannel();
             channel++;
+            if (channel > 10) channel = 1;  // 10++ = 1
             tv.setChannel(channel);
             System.out.printf("Watching channel %d\n", channel);
         }
-        public void watchTV(Television tv){
+        public void watchTV(Television tv){ // katsotaan televisiota kunnes väsyttää, sitten mennään nukkumaan
             while (this.stamina >= 1){
-
+                switchChannel(tv);
                 this.stamina--;
             }
             if (this.stamina == 0){
                 bedTime();
             }
         }
+        public void task(Television tv){    // tehtävän katsomislooppi
+            while(this.day <= 10){
+                watchTV(tv);
+            }
+        }
 
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) {    // mainissa alustetaan vain oliot ja käynnistetään katsominen
         Television telly = new Television();
         TelevisionViewer watcher = new TelevisionViewer();
-        int day = 0;
-        while (day < 10){
-            watcher.watchTV(telly);
-            day++;
-        }
+        watcher.task(telly);
     }
 }
