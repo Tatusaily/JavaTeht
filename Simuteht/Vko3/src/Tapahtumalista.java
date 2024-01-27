@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 
-class Tapahtumalista {
+public class Tapahtumalista {
     private static PriorityQueue<Tapahtuma> lista
             = new PriorityQueue<Tapahtuma>(Tapahtuma::compareTo);
 
