@@ -1,6 +1,4 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Iterator;
+
 import java.util.PriorityQueue;
 import java.util.Random;
 
@@ -14,7 +12,6 @@ public class Teht2_4 {
             taplist.add(uusi);
         }
         taplist.remove();
-        taplist.print();
     }
 }
 
@@ -28,11 +25,6 @@ class Tapahtumalista {
 
     public void remove(){
         lista.remove();
-    }
-
-    public void print() { // TODO PRINTER
-
-
     }
 }
 
