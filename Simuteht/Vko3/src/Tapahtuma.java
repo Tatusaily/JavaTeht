@@ -1,4 +1,4 @@
-class Tapahtuma {
+public class Tapahtuma {
     int age;
     public Tapahtuma(int age){
         this.age = age;
@@ -8,6 +8,9 @@ class Tapahtuma {
     }
     public int getAge(){
         return age;
+    }
+    public long getTime(int aika){ // return total time
+        return (aika - this.getAge());
     }
 
 }

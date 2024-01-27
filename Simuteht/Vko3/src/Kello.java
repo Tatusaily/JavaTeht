@@ -3,7 +3,7 @@ public class Kello{ // Task3
         private int time;
         private Kello(){    // private constructor
         }
-       public Kello getInstance(){ // singleton checker
+       public static Kello getInstance(){ // singleton checker
             if (instance == null){
                 instance = new Kello();
             }
