@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class GroceryListManager {
+public class task1GroceryListManager {
     private final ArrayList<String> groceryList = new ArrayList<>();
 
     // Add methods here
@@ -27,7 +27,7 @@ public class GroceryListManager {
     }
 
     public static void main(String[] args) {
-        GroceryListManager a = new GroceryListManager();
+        task1GroceryListManager a = new task1GroceryListManager();
 
         System.out.println();
         a.addItem("Banana");
