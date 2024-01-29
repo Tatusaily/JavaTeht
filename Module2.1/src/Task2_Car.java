@@ -15,17 +15,16 @@ public class Task2_Car {
         }
         public void accelerate() {
             if (gasolineLevel > 0)
-                speed += 10;
+                speed += 1;
             else
                 speed = 0;
             if (speed > topSpeed){
                 speed = topSpeed;
             }
         }
-        void decelerate(int amount) {
+        void decelerate() {
             if (gasolineLevel > 0) {
-                if (amount > 0)
-                    speed = Math.max(0, speed - amount);
+                    speed -= 1;
             } else
                 speed = 0;
         }
@@ -41,6 +40,40 @@ public class Task2_Car {
         float getGasolineLevel() {
             return gasolineLevel;
         }
+
+        // CruiseControl
+        private int targetSpeed;
+        private boolean cruiseControl = false;
+        void setTargetSpeed(int target){
+            this.targetSpeed = target;
+        }
+        int getTargetSpeeed(){
+            return this.targetSpeed;
+        }
+        void toggleCruiseControl(){
+            cruiseControl = !cruiseControl;
+            if (cruiseControl){
+                if (targetSpeed<=topSpeed && targetSpeed>0){
+
+                    while(targetSpeed != speed){
+                        if (targetSpeed - speed > 0){
+                            accelerate();
+                        } else if (targetSpeed - speed < 0) {
+                            decelerate();
+                        }
+                    }
+
+                } else if (targetSpeed>topSpeed) {
+                    System.out.println("Target speed is too high.");
+                } else if (targetSpeed<0){
+                    System.out.println("Target speed is less than 0.");
+                }
+            }
+            if (!cruiseControl){
+                System.out.println("Cruise control has been turned off.");
+            }
+        }
+
     }
     public static void main(String[] args) {
 
