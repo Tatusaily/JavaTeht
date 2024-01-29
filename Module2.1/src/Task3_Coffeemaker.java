@@ -31,10 +31,12 @@ public class Task3_Coffeemaker {
             return this.amount;
         }
         public void setCoffeetype(String type){
-            type = type.toLowerCase();
-            if (type.equals("normal") || (type.equals("espresso"))){
-                this.coffeetype = type;
-            }
+            if (this.getPower()){
+                type = type.toLowerCase();
+                if (type.equals("normal") || (type.equals("espresso"))){
+                    this.coffeetype = type;
+                }
+            }else System.out.println("Power is off.");
         }
         public String getCoffeetype(){
             return this.coffeetype;
