@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -6,8 +5,8 @@ class Book{
     private String title;
     private String author;
     private Integer year;
-    private Double rating;
-    private ArrayList<String> reviews;
+    private Double rating = 0.0;
+    private final ArrayList<String> reviews = new ArrayList<>();
     public Book(String title, String author, int year){
         this.title = title;
         this.author = author;
@@ -53,8 +52,8 @@ class Book{
 }
 
 class Library{
-    private ArrayList<Book> booklist = new ArrayList<>();
-    private ArrayList<User> userlist = new ArrayList<>();
+    private final ArrayList<Book> booklist = new ArrayList<>();
+    private final ArrayList<User> userlist = new ArrayList<>();
     public void addBook(Book ... a){
         for(Book book : a){
             booklist.add(book);
@@ -79,24 +78,24 @@ class Library{
     }
 
     // Task2 -> Borrowing system
-    private ArrayList<Book> borrowList = new ArrayList<>();
+    private final ArrayList<Book> borrowList = new ArrayList<>();
     public void borrowBook(User user, Book ... a){
         for(Book book : a){
             ArrayList<Book> blist = getBooklist();
             ArrayList<Book> rlist = getBorrowList();
             if(blist.contains(book)){
+                user.borrowed.add(book);
                 rlist.add(book);
                 blist.remove(book);
             }
         }
     }
-    public void returnBook(Book ... a){
-        for(Book book : a){
-            ArrayList<Book> blist = getBooklist();
-            ArrayList<Book> rlist = getBorrowList();
-            if(rlist.contains(book)){
-                blist.add(book);
-                rlist.remove(book);
+    public void returnBook(User user, Book ... a){
+        for(Book book : a){ // Jos annetulla käyttäjällä on lainattu kirja, poistetaan se lainatuista ja lisätään kirjastoon.
+            if(user.borrowed.contains(book)){
+                user.borrowed.remove(book);
+                getBooklist().add(book);
+                getBorrowList().remove(book);
             }
         }
     }
@@ -110,7 +109,7 @@ class Library{
     }
     // Task5 -> Statistiikka
     public double getAverageBookRating(){   // get average of all books
-        double sum = 0;
+        double sum = 0.0;
         for(Book book : booklist){
             double rating = book.getRating();
             sum += rating;
@@ -127,6 +126,8 @@ class Library{
         }
         return most;
     }
+    //  Task6 -> User
+    //  Lista käyttäjille, kirjan lainaus vaatii käyttäjän, palautus ottaa käyttäjän lainatuista kirjoista kirjan.
     public ArrayList<User> getUserList(){
         return this.userlist;
     }
@@ -158,9 +159,9 @@ public class LibraryTask {
         System.out.println();
 
         // Task2, lainataan ja palautetaan
-        lib.borrowBook(b6, b5, b4, b3);
+        lib.borrowBook(user1, b6, b5, b4, b3);
         lib.displayBooks();
-        lib.returnBook(b6);
+        lib.returnBook(user1, b6);
         System.out.println();
 
         //Task3, tarkistetaan saatavuus
@@ -168,6 +169,25 @@ public class LibraryTask {
         System.out.println();
 
         //Task4, arvostelu
+        b1.addReview("Kertoo junista, ihan hyvä.");
+        b1.addReview("Junat on kivoja. +1");
+        b1.setRating(1);
+        b2.setRating(2);
+        b3.setRating(1);
+        b4.setRating(5);
+        b5.setRating(7);
+        b6.setRating(10);
+        b6.addReview("Tärkeä. Suosittelen kaikille.");
+
+        //Task5, Statistics
+        lib.displayBooks();
+        System.out.printf("Keskimääräinen kirja-arvosana on: %.1f\n", lib.getAverageBookRating());
+        System.out.printf("Eniten arvosteltu kirja on: %s, jonka kirjoitti %s vuonna %d.",
+                lib.getMostReviewedBook().getTitle(),
+                lib.getMostReviewedBook().getAuthor(),
+                lib.getMostReviewedBook().getYear());
+
+        //Task6, käyttäjää käytetään selvästi aikaisemmin.
 
     }
 }
