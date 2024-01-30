@@ -57,6 +57,10 @@ class Library{
             }
         }
     }
+
+    public ArrayList<Book> getBooklist() {
+        return booklist;
+    }
 }
 
 public class Task1 {
