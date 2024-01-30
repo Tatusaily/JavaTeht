@@ -61,15 +61,15 @@ class Library{
 
 public class Task1 {
     public static void main(String[] args) {
-            Library lib = new Library();
-            Book b1 = new Book("Locomotive", "Brian Floca", 2013);
-            Book b2 = new Book("The Food of Morocco", "Quentin Bacon", 2009);
-            Book b3 = new Book("Last Lecture", "Jeffrey Zaslow", 2008);
-            Book b4 = new Book("Cloud Cuckoo Land", "Anthony Doerr", 2010);
-            Book b5 = new Book("Dear Santhuan", "Awkawae Emezi", 2011);
-            Book b6 = new Book("1984", "George Orwell", 1954);
-            lib.addBook(b1, b2, b3, b4, b5, b6); // pistetään kaikki yhdellä kertaa niin että hujahtaa
-            lib.displayBooks();
-            lib.getBookByAuthor("George Orwell", "Jeffrey Zaslow");
+        Library lib = new Library();
+        Book b1 = new Book("Locomotive", "Brian Floca", 2013);
+        Book b2 = new Book("The Food of Morocco", "Quentin Bacon", 2009);
+        Book b3 = new Book("Last Lecture", "Jeffrey Zaslow", 2008);
+        Book b4 = new Book("Cloud Cuckoo Land", "Anthony Doerr", 2010);
+        Book b5 = new Book("Dear Santhuan", "Awkawae Emezi", 2011);
+        Book b6 = new Book("1984", "George Orwell", 1954);
+        lib.addBook(b1, b2, b3, b4, b5, b6); // pistetään kaikki yhdellä kertaa niin että hujahtaa
+        lib.displayBooks();
+        lib.getBookByAuthor("George Orwell", "Jeffrey Zaslow");
     }
 }
