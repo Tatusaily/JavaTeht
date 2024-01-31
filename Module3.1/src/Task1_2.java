@@ -1,5 +1,5 @@
 public class Task1_2 {
-    class Car {
+    static class Car {
         private double speed;
         private double gasolineLevel;
         private float accelSpeed = 1.0F;
@@ -67,7 +67,7 @@ public class Task1_2 {
             }
         }
     }
-    class Supercar extends Car{
+    static class Supercar extends Car{
 
         public Supercar(float topSpeed, float tankCap) {
             super(topSpeed*1.2, tankCap*1.2);
@@ -76,7 +76,7 @@ public class Task1_2 {
             super.brakeSpeed = 1.2F;
         }
     }
-    class Bus extends Car{
+    static class Bus extends Car{
         private final int maxPassengers = 54;
         private int numPassengers = 0;
 
