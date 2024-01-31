@@ -68,7 +68,6 @@ public class Task1_2 {
         }
     }
     static class Supercar extends Car{
-
         public Supercar(float topSpeed, float tankCap) {
             super(topSpeed*1.2, tankCap*1.2);
             super.fConsumption = 1.4F;
@@ -83,7 +82,6 @@ public class Task1_2 {
         public Bus(double topSpeed, double tankCap) {
             super(topSpeed, tankCap);
         }
-
         public int passengerEnter(int num){
             numPassengers += num;
             if (numPassengers>maxPassengers){   // jos matkustajia on liikaa, palautetaan erotus.
