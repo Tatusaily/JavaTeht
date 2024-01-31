@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.random.RandomGenerator;
 
 public class Task3_4 {
