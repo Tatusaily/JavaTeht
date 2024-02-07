@@ -2,7 +2,6 @@ package Task2.system;
 import Task2.model.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Library {
     private final ArrayList<Book> booklist;
@@ -27,10 +26,16 @@ public class Library {
 
     // FUNCTIONALITY
     public void addBook(Book ... a){    // Add all books.
-        this.booklist.addAll(Arrays.asList(a));
+        for (Book book : a){
+            booklist.add(book);
+            System.out.println("Added book " + book.getTitle() + ".");
+        }
     }
     public void addMembers(LibraryMember ... a){    // Add all members
-        memberlist.addAll(Arrays.asList(a));
+        for (LibraryMember member : a){
+            memberlist.add(member);
+            System.out.println("Added member " + member.getName() + ".");
+        }
     }
     // Member can have unlimited copies of a book
     public void borrowBook(LibraryMember member, Book book){
@@ -38,6 +43,7 @@ public class Library {
             booklist.remove(book);
             borrowlist.add(book);
             member.getBookList().add(book);
+            System.out.println(member.getName() + " borrowed book " + book.getTitle() + ".");
         }else {
             System.out.println("Book not found");
         }
@@ -48,6 +54,9 @@ public class Library {
             borrowlist.remove(book);
             member.getBookList().remove(book);
             booklist.add(book);
+            System.out.println(member.getName() + " returned book " + book.getTitle() + ".");
+        }else {
+            System.out.println("Something went wrong when returning book.");
         }
     }
 }
