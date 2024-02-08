@@ -7,7 +7,6 @@ public class LibraryMember {
     private final int ID;
     static int IDcounter = 0;
     private final ArrayList<Book> bookList;
-
     public LibraryMember(String name){
         IDcounter++;
         this.ID = IDcounter;
@@ -25,5 +24,13 @@ public class LibraryMember {
 
     public ArrayList<Book> getBookList() {
         return bookList;
+    }
+
+    // Uudet metodit:
+    public void reserveBook(Book book){
+        bookList.add(book);
+    }
+    public void returnBook(Book book){
+        bookList.remove(book);
     }
 }

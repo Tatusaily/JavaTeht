@@ -12,9 +12,9 @@ public class Main {
                 b2 = new Book("BTitle2", "Bauthor2", "952-35163-7-2");
         // Run some demonstration commands.
         // Intentionally try to return a book that the user doesn't have.
-        lib1.addBook(b1, b2);       lib1.borrowBook(u1, b2);
-        lib1.borrowBook(u2, b1);    lib1.returnBook(u1, b2);
-        lib1.returnBook(u2, b2);    lib1.returnBook(u2, b1);
+        lib1.addBook(b1, b2);       lib1.borrowBook(u1, b2); lib1.borrowBook(u2, b1);
+        lib1.displayBorrowedBooks(u1);
+        lib1.returnBook(u1, b2);    lib1.returnBook(u2, b2);    lib1.returnBook(u2, b1);
 
     }
 }

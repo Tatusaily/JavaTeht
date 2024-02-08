@@ -2,12 +2,14 @@ package Task3.model;
 
 public class Book {
     private final String title;
+    private boolean reserved;
     private final String author;
     private final String ISBN;
     public Book(String title, String author, String ISBN){
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
+        this.reserved = false;
     }
 
     // GETTERS
@@ -21,5 +23,12 @@ public class Book {
 
     public String getISBN() {
         return ISBN;
+    }
+
+    public boolean isReserved() {
+        return reserved;
+    }
+    public void toggleReserved(){
+        this.reserved = !this.reserved;
     }
 }
