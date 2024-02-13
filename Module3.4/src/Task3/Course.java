@@ -13,6 +13,15 @@ public class Course implements Serializable {
         instructor = instr;
     }
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseCode='" + courseCode + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", instructor='" + instructor + '\'' +
+                '}';
+    }
+
     public String getCourseCode() {
         return courseCode;
     }

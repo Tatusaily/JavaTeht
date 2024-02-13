@@ -13,6 +13,15 @@ public class Student implements Serializable {
         this.ID = IDcount++;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", ID=" + ID +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

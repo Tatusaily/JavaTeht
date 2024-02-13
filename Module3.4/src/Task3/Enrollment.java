@@ -36,4 +36,13 @@ public class Enrollment implements Serializable {
     public void setStudent(Student student) {
         this.student = student;
     }
+
+    @Override
+    public String toString() {
+        return "Enrollment{" +
+                "student=" + student +
+                ", course=" + course +
+                ", enrollmentDate='" + enrollmentDate + '\'' +
+                '}';
+    }
 }
