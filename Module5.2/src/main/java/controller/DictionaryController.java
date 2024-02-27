@@ -10,7 +10,6 @@ public class DictionaryController {
 
     public DictionaryController(DictionaryView gui) {
         this.gui = gui;
-        gui.setController(this);
     }
 
     public String search(String word) {

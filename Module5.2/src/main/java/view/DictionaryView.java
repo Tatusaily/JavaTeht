@@ -73,15 +73,14 @@ public class DictionaryView extends Application {
                 } catch (Exception e) {
                     resultarea.setText("Word not found");
                 }
-
             }
         });
 
         stage.show();
     }
 
-    public void setController(DictionaryController controller) {
-        this.controller = controller;
+    public void init() {
+        controller = new DictionaryController(this);
     }
 
 
