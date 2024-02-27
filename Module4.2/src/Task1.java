@@ -19,5 +19,23 @@ public class Task1 {
             return sum;
         }
 
+        // This method gets the average of the numbers in the array
+        public double average(){
+            if (this.numarray.size() == 0) {throw new IllegalArgumentException();}
+            return (double) this.sum() / this.numarray.size();
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        calc.addint(5);
+        calc.addint(10);
+        calc.addint(15);
+        System.out.println(calc.sum());
+        System.out.println(calc.average());
+        calc.reset();
+        System.out.println(calc.sum());
+        System.out.println(calc.average());
     }
 }
