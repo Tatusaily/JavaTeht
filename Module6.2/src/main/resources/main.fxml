@@ -17,15 +17,15 @@
                   <HBox fx:id="ContentBox1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label text="Convert" />
-                        <TextField />
-                        <ChoiceBox prefWidth="150.0" />
+                        <TextField fx:id="fromText" />
+                        <ChoiceBox fx:id="fromChoice" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox fx:id="ContentBox2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label text="To" />
-                        <ChoiceBox prefWidth="150.0" />
-                        <TextField />
+                        <ChoiceBox fx:id="toChoice" prefWidth="150.0" />
+                        <TextField fx:id="toText" />
                      </children>
                   </HBox>
                </children>

@@ -14,4 +14,8 @@ public class Currency {
     public double getRate() {
         return rate;
     }
+
+    public String toString() {
+        return this.name;
+    }
 }

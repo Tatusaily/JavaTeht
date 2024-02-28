@@ -22,4 +22,8 @@ public class CurrencyHolder {
         }
         return instance;
     }
+
+    public ArrayList<Currency> getCurrencies() {
+        return this.currencies;
+    }
 }
