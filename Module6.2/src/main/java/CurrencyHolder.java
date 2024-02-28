@@ -7,6 +7,7 @@ public class CurrencyHolder {
     private static CurrencyHolder instance = null;
 
     private CurrencyHolder() {
+        // Some hard-coded currencies and their exchange rates
         this.currencies.add(new Currency("USD", 1.0));
         this.currencies.add(new Currency("EUR", 0.85));
         this.currencies.add(new Currency("GBP", 0.75));
@@ -15,8 +16,11 @@ public class CurrencyHolder {
         this.currencies.add(new Currency("RUB", 75.0));
         this.currencies.add(new Currency("INR", 75.0));
         this.currencies.add(new Currency("AUD", 1.3));
+        this.currencies.add(new Currency("CAD", 1.25));
+        this.currencies.add(new Currency("CHF", 0.9));
     }
     public static CurrencyHolder getInstance() {
+        // Singleton
         if (instance == null) {
             instance = new CurrencyHolder();
         }
