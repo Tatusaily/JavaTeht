@@ -18,7 +18,7 @@
    <children>
       <BorderPane prefWidth="400.0">
          <center>
-            <VBox BorderPane.alignment="CENTER">
+            <VBox spacing="2.0" BorderPane.alignment="CENTER">
                <children>
                   <GridPane hgap="5.0">
                     <columnConstraints>
@@ -33,17 +33,17 @@
                      <children>
                         <Label text="Amount">
                            <font>
-                              <Font name="System Bold" size="12.0" />
+                              <Font name="SansSerif Bold" size="12.0" />
                            </font>
                         </Label>
                         <Label text="From" GridPane.columnIndex="1">
                            <font>
-                              <Font name="System Bold" size="12.0" />
+                              <Font name="SansSerif Bold" size="12.0" />
                            </font>
                         </Label>
                         <Label text="To" GridPane.columnIndex="2">
                            <font>
-                              <Font name="System Bold" size="12.0" />
+                              <Font name="SansSerif Bold" size="12.0" />
                            </font>
                         </Label>
                         <ChoiceBox fx:id="fromChoice" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -53,10 +53,15 @@
                   </GridPane>
                   <HBox spacing="5.0">
                      <children>
-                        <Button fx:id="convertButton" defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" text="Convert" />
+                        <Button fx:id="convertButton" defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" text="Convert">
+                           <font>
+                              <Font name="SansSerif Regular" size="12.0" />
+                           </font>
+                        </Button>
                         <TextField fx:id="resultText" prefHeight="25.0" prefWidth="316.0" />
                      </children>
                   </HBox>
+                  <Label prefWidth="380.0" text="Enter the desired amount and select the currencies. Press the &quot;Convert&quot; button to get your result." wrapText="true" />
                </children>
             </VBox>
          </center>
