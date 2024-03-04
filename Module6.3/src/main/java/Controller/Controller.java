@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Pet;
 import View.VirtupetGUI;
+import javafx.event.ActionEvent;
 
 public class Controller {
     public Controller(VirtupetGUI gui, double[] size) {
@@ -65,6 +66,4 @@ public class Controller {
         // Set the tick ready flag.
         handleMove();
     }
-
-
 }

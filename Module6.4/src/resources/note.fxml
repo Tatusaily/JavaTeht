@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NoteController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+         <children>
+            <TextField fx:id="TitleBox" promptText="Title" />
+            <TextArea fx:id="BodyBox" promptText="Start notes here..." />
+            <HBox>
+               <children>
+                  <Button fx:id="addNoteButton" defaultButton="true" mnemonicParsing="false" onAction="#addNote" text="Add" />
+                  <Button fx:id="deleteNoteButton" cancelButton="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteNote" text="Delete" />
+               </children>
+            </HBox>
+            <ListView fx:id="noteBox" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" onMouseClicked="#readNote"/>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
