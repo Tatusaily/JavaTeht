@@ -39,7 +39,7 @@ public class VirtupetGUI extends Application {
     }
     private Canvas canvas;
     private double[] size = new double[]{900, 700};
-    private Image petImage = new Image("pet-face.png", 50, 50, false, false);
+    private Image petImage = new Image("pet-face.png", 100, 100, false, false);
     private Controller controller;
 
     public void drawPet(double[] position) {
