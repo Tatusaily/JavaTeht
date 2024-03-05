@@ -1,3 +1,5 @@
+package Task1;
+
 public class PalindromeChecker {
     boolean isPalindrome(Object arg) {
         // Step 1: Convert the object to a string
