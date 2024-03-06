@@ -5,11 +5,11 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Module4.2/pom.xml" />
-        <option value="$PROJECT_DIR$/Module5.2/pom.xml" />
         <option value="$PROJECT_DIR$/Module6.1/pom.xml" />
         <option value="$PROJECT_DIR$/Module6.2/pom.xml" />
         <option value="$PROJECT_DIR$/Module6.3/pom.xml" />
         <option value="$PROJECT_DIR$/Module6.4/pom.xml" />
+        <option value="$PROJECT_DIR$/Module7.1/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
