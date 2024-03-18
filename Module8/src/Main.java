@@ -68,7 +68,12 @@ public class Main {
         System.out.println("Array of odd numbers: " + Arrays.toString(numlist));
 
         // Double
-        
+        numlist = Arrays.stream(numlist).map(n -> n * 2).toArray(Integer[]::new);
+        System.out.println("Array of doubled odd numbers: " + Arrays.toString(numlist));
+
+        // Sum all
+        int sum = Arrays.stream(numlist).reduce(0, Integer::sum);
+        System.out.println("Sum of doubled odd numbers: " + sum);
 
 
     }
